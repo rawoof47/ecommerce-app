@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { assets } from '../assets/assets';
 import { Link, NavLink } from 'react-router-dom';
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [visible, setVisible] = useState(false);
   const dropdownRef = useRef(null);
+  const {setShowSearch} = useContext(ShopContext);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -47,7 +49,7 @@ const Navbar = () => {
 
       {/* Search, Profile, Cart & Menu Icons */}
       <div className='flex items-center gap-6'>
-        <img src={assets.search_icon} className='w-5 cursor-pointer' alt="Search" />
+        <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer' alt="Search" />
 
         {/* Profile Icon with Clickable Dropdown */}
         <div className='relative' ref={dropdownRef}>
