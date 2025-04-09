@@ -53,12 +53,13 @@ const Navbar = () => {
 
         {/* Profile Icon with Clickable Dropdown */}
         <div className='relative' ref={dropdownRef}>
-          <img 
+          <Link to='/login' ><img 
             className='w-5 cursor-pointer' 
             src={assets.profile_icon} 
             alt="Profile" 
             onClick={() => setDropdownOpen(!dropdownOpen)}
           />
+          </Link>
 
           {dropdownOpen && (
             <div 
