@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
+import NewsLetterBox from '../components/NewsLetterBox';
 
 const Contact = () => {
   return (
@@ -32,6 +33,9 @@ const Contact = () => {
           <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
         </div>
       </div>
+
+<NewsLetterBox />
+
     </div>
   );
 };
